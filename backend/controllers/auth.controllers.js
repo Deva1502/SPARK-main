@@ -63,11 +63,10 @@ export const signIn = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      maxAge: 10 * 365 * 24 * 60 * 60 * 1000,
-      secure: false,
-      sameSite: "Strict",
+      secure: true, // must be true in production
+      sameSite: "none", // or "lax" if you need some cross-site requests
+      maxAge: 24 * 60 * 60 * 1000, // 1 day (adjust as needed)
     });
-
     return res.status(200).json(user);
   } catch (error) {
     return res.status(500).json({ message: `signin error ${error}` });
