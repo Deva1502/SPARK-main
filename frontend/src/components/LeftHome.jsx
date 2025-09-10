@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/logoo.png";
 import { FaRegHeart } from "react-icons/fa6";
 import dp from "../assets/dp.webp";
 import { useDispatch, useSelector } from "react-redux";
