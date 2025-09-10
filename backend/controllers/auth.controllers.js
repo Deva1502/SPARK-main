@@ -33,9 +33,9 @@ export const signUp = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true, // must be true in production
-      sameSite: "none", // or "lax" if you need some cross-site requests
-      maxAge: 24 * 60 * 60 * 1000, // 1 day (adjust as needed)
+      secure: true,
+      sameSite: "none",
+      maxAge: 24 * 60 * 60 * 1000, 
     });
 
     return res.status(201).json(user);
@@ -63,9 +63,9 @@ export const signIn = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true, // must be true in production
-      sameSite: "none", // or "lax" if you need some cross-site requests
-      maxAge: 24 * 60 * 60 * 1000, // 1 day (adjust as needed)
+      secure: true,
+      sameSite: "none",
+      maxAge: 24 * 60 * 60 * 1000,
     });
     return res.status(200).json(user);
   } catch (error) {
